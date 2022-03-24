@@ -64,6 +64,8 @@ moneyManager.sendMoneyCallback = (data) => {
     });
 };
 //Работа с избранным
+getFavorites();
+
 const favoritesWidget = new FavoritesWidget();
 
 const getFavorites = () => {

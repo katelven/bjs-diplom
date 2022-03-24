@@ -1,4 +1,5 @@
-"use strict"
+"use strict";
+//вход
 const userForm = new UserForm();
 
 userForm.loginFormCallback = data => {
@@ -6,17 +7,17 @@ userForm.loginFormCallback = data => {
         if (response.success) {
             location.reload();
         } else {
-            userForm.setLoginErrorMessage('Пользователь не найден');
+            userForm.setLoginErrorMessage(response.error);
         }
     });
 };
-
+//регистрация
 userForm.registerFormCallback = data => {
     ApiConnector.register(data, response => {
         if (response.success) {
             location.reload();
         } else {
-            userForm.registerErrorMessageBox('Неправильное имя пользователя или пароль');
+            userForm.setRegisterErrorMessage(response.error);
         }
     });
 };
